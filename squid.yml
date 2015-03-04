@@ -1,0 +1,11 @@
+---
+- name: install and configure proxy server
+  hosts: all
+  tasks:
+    - name: install squid and squidGuard
+      yum:
+        name={{item}}
+        state=present
+      with_items:
+        - squid
+        - squidGuard
